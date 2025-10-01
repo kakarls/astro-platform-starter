@@ -6,21 +6,15 @@ import { uploadDisabled } from '../../utils';
 import ContextAlert from '../../components/ContextAlert.astro';
 
 const explainer = `
-[Netlify Blobs](https://docs.netlify.com/blobs/overview/) provides an object store for any kind of data, be it JSON, binary, 
-or [really](https://mk.gg/projects/chalkstream) anything else ([really!](https://mk.gg/projects/turbofan)). In this example, the blob store is used to **hold the data of user-generated random blobby shapes**.
-
-Below is an Astro island with a React component for editing, uploading and viewing blobs to the blob store 🙂.
+If you are interested in scheduling a tour with us, or have questions or concerns, please fill out the form below and we will reach out to you. 
 `;
 
 const uploadDisabledText = `
-User uploads are disabled in this site. To run your own and try it out: 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-platform-starter">
-<img src="https://www.netlify.com/img/deploy/button.svg" style="display: inline;" alt="Deploy to Netlify" />
-</a>
+
 `;
 ---
 
-<Layout title="Blobs">
+<Layout title="Contact Us">
     <ContextAlert
         addedChecksFunction={() => {
             return uploadDisabled ? uploadDisabledText : null;
