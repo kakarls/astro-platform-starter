@@ -1,20 +1,30 @@
 import type { APIRoute } from 'astro';
 import { getStore } from '@netlify/blobs';
+export const post: APIRoute = async ({ request }) => {
+try {
+const formData = await request.formData();
+const name = formData.get('name')?.toString() || 'Anonymous';
+const email = formData.get('email')?.toString() || 'No email';
+const message = formData.get('message')?.toString() || '';
 
-export const prerender = false;
+// Get (or create) a blob store called "contact-messages"
+const store = getStore('contact-messages');
 
-export const GET: APIRoute = async (context) => {
-    const urlParams = new URL(context.url);
-    const key = urlParams.searchParams.get('key');
-    if (!key) {
-        return new Response('Bad Request', { status: 400 });
-    }
+// Save the message using a timestamp as the key
+await store.setItem(Date.now().toString(), {
+name,
+email,
+message,
+});
 
-    const blobStore = getStore('shapes');
-    const blob = await blobStore.get(key, { type: 'json' });
-    return new Response(
-        JSON.stringify({
-            blob
-        })
-    );
+return new Response(
+'✅ Thanks for your message! We’ll get back to you soon.',
+{ status: 200 }
+);
+} catch (err) {
+console.error(err);
+return new Response('❌ Something went wrong. Please try again later.', {
+status: 500,
+});
+}
 };
