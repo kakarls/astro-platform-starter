@@ -1,0 +1,169 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Frequently Asked Questions | Suyos del Inca">
+  <section class="faq-hero">
+    <div class="container">
+      <h1>Frequently Asked Questions</h1>
+      <p class="intro">
+        Here are some common questions from our travelers about our tours,
+        logistics, and visiting Quillabamba. If you don’t see your question
+        here, feel free to <a href="/contact">contact us</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2>Getting Here</h2>
+
+      <div class="faq-item">
+        <h3>How do I get to Quillabamba?</h3>
+        <p>
+          Quillabamba is located in the Cusco region of Peru, about 200 km north
+          of the city of Cusco. The most common way to reach it is by road — a
+          scenic drive of about 6–7 hours that crosses the Andes and descends
+          into the tropical cloud forest. There are daily buses and shared vans
+          (“colectivos”) from Cusco to Quillabamba, or we can help arrange
+          private transportation for your group.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is there an airport in Quillabamba?</h3>
+        <p>
+          Currently, there are no commercial flights to Quillabamba. The nearest
+          airport is in Cusco (Alejandro Velasco Astete International Airport),
+          where most travelers begin their journey before continuing by road.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2>Before Your Tour</h2>
+
+      <div class="faq-item">
+        <h3>What should I bring for the tours?</h3>
+        <p>
+          We recommend comfortable walking shoes, light clothing for warm days,
+          a jacket for cooler evenings, sunscreen, insect repellent, a reusable
+          water bottle, and any personal medications. For hikes or nature tours,
+          bring a hat, rain protection, and your camera!
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do I need to be in good shape for the tours?</h3>
+        <p>
+          Most of our tours are suitable for anyone with a moderate fitness
+          level. Some treks involve uneven terrain or higher altitudes, so let
+          us know your preferences and we’ll match you with the right experience.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are meals included?</h3>
+        <p>
+          Many of our full-day and multi-day tours include traditional meals
+          prepared with local ingredients. Check your tour details for what’s
+          included, or ask us when booking.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2>General Questions</h2>
+
+      <div class="faq-item">
+        <h3>When is the best time to visit Quillabamba?</h3>
+        <p>
+          The best time to visit is during the dry season, from May to October.
+          During this time, you’ll enjoy warm, sunny days and clear skies.
+          However, Quillabamba’s tropical climate makes it a pleasant destination
+          year-round.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do I need to speak Spanish?</h3>
+        <p>
+          While Spanish is the main language in the region, our guides speak
+          both Spanish and English. We’ll make sure you feel comfortable and
+          understand everything during your experience.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can I book a tour?</h3>
+        <p>
+          You can book directly through our <a href="/tours">Tours</a> page or
+          by <a href="/contact">contacting us</a>. We’ll confirm your booking
+          and send you all the details by email.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-hero {
+      background: linear-gradient(180deg, #0b1b2b, #193a59);
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 1rem auto 0;
+      line-height: 1.6;
+    }
+
+    .faq-section {
+      padding: 4rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1.5rem;
+    }
+
+    .faq-item h3 {
+      font-size: 1.25rem;
+      color: #193a59;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-item p {
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    a {
+      color: #c9a14a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</Layout>
