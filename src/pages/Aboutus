@@ -42,17 +42,17 @@ import Layout from "../layouts/Layout.astro";
       <h2>Meet the Team</h2>
       <div class="team-grid">
         <div class="team-member">
-          <img src="/images/marco.jpg" alt="Team member photo" />
+    //      <img src="/images/marco.jpg" alt="Team member photo" />
           <h3>Marco</h3>
           <p>Founder & Lead Guide</p>
         </div>
         <div class="team-member">
-          <img src="/images/jose.jpg" alt="Team member photo" />
+   //       <img src="/images/jose.jpg" alt="Team member photo" />
           <h3>Jose Luis</h3>
           <p>Operations Manager</p>
         </div>
         <div class="team-member">
-          <img src="/images/kaci.jpg" alt="Team member photo" />
+    //      <img src="/images/kaci.jpg" alt="Team member photo" />
           <h3>Kaci</h3>
           <p>Business Development Manager</p>
         </div>
