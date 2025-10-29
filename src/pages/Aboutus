@@ -1,0 +1,143 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About Us">
+  <section class="about-hero">
+    <div class="container">
+      <h1>About Suyos del Inca</h1>
+      <p class="intro">
+        We are a passionate team dedicated to sharing the rich history, culture,
+        and landscapes of Peru through unforgettable travel experiences.
+      </p>
+    </div>
+  </section>
+
+  <section class="our-story">
+    <div class="container">
+      <h2>Our Story</h2>
+      <p>
+        Suyos del Inca was born from a love for adventure and a desire to
+        connect travelers with the authentic spirit of the Andes. Since our
+        founding, we’ve guided visitors through breathtaking destinations,
+        helping them experience Peru beyond the typical tourist routes, and 
+        incorporating unique culutral expereinces into the adventure. 
+      </p>
+    </div>
+  </section>
+
+  <section class="our-mission">
+    <div class="container">
+      <h2>Our Mission</h2>
+      <p>
+        To create meaningful journeys that celebrate Peru’s natural beauty,
+        ancestral wisdom, and vibrant communities — all while promoting
+        sustainable and responsible tourism.
+      </p>
+    </div>
+  </section>
+
+  <section class="our-team">
+    <div class="container">
+      <h2>Meet the Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="/images/marco.jpg" alt="Team member photo" />
+          <h3>Marco</h3>
+          <p>Founder & Lead Guide</p>
+        </div>
+        <div class="team-member">
+          <img src="/images/jose.jpg" alt="Team member photo" />
+          <h3>Jose Luis</h3>
+          <p>Operations Manager</p>
+        </div>
+        <div class="team-member">
+          <img src="/images/kaci.jpg" alt="Team member photo" />
+          <h3>Kaci</h3>
+          <p>Business Development Manager</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to explore with us?</h2>
+      <p>Join one of our tours and experience the magic of the Andes firsthand.</p>
+      <a href="/tours" class="button">See Our Tours</a>
+    </div>
+  </section>
+
+  <style>
+    .about-hero {
+      background: linear-gradient(180deg, #0b1b2b, #193a59);
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .intro {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 1rem auto 0;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 4rem 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .cta {
+      background: #f5f7fa;
+      text-align: center;
+    }
+
+    .cta .button {
+      display: inline-block;
+      background-color: #c9a14a;
+      color: white;
+      padding: 0.8rem 1.6rem;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    .cta .button:hover {
+      background-color: #b18f3f;
+    }
+  </style>
+</Layout>
