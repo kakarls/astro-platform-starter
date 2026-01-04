@@ -40,21 +40,17 @@ export const tours = [
 
   
   {
-    slug: "duende-waterfall-coffee",
-    title: "Duende Waterfall & Coffee Farm",
-    summary: "Scenic hike through coffee fields ending at a hidden waterfall.",
+    slug: "zipline-thermal",
+    title: "Canopy Ziplining and Thermal Baths",
+    summary: "An adrenaline-inudcing ride above the treetops, followed by a relaxing thermal bath visit",
     image: "/images/tours/duende.jpg",
     price: 45,
     difficulty: "Easy–Moderate",
-    distanceKm: 3,
+    distanceKm: 0,
     meals: { breakfast: 0, lunch: 1, dinner: 0 },
     itinerary: [
-      "9:00 am hotel pickup",
-      "Drive to D’Morveli coffee farm",
-      "30-minute hike to Duende Waterfall",
-      "Coffee tour with tastings",
-      "Traditional lunch",
-      "Return to Quillabamba"
+      "8:30 am depart from Quillabamba - our shuttle will pick you up from your hotel"
+"A half hour drive to the ziplining "
     ]
   }
 
