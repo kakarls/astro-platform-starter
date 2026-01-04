@@ -7,6 +7,7 @@ export const tours = [
       "A relaxed jungle hike to a beautiful waterfall combined with a visit to a local chocolate farm.",
     image: "/images/tours/illapani/hero.jpg",
 
+    duration: "1 day",
     difficulty: "easy",
     price: 45,
     distanceKm: 2,
@@ -35,6 +36,7 @@ export const tours = [
       "A scenic walk through coffee fields ending at a hidden waterfall, plus a hands-on coffee tour.",
     image: "/images/tours/duende/hero.jpg",
 
+    duration: "1 day",
     difficulty: "easy",
     price: 45,
     distanceKm: 3,
@@ -64,7 +66,8 @@ export const tours = [
       "An adrenaline-filled zipline adventure followed by relaxation in the Cocalmayo thermal baths.",
     image: "/images/tours/canopy/hero.jpg",
 
-    difficulty: "moderate",
+    duration: "1 day",
+    difficulty: "easy",
     price: 55,
     distanceKm: 1,
     meals: { breakfast: 0, lunch: 1, dinner: 0 },
@@ -92,6 +95,7 @@ export const tours = [
       "A perfect combination of hiking, waterfalls, coffee, and an exciting white-water rafting experience.",
     image: "/images/tours/yanay/hero.jpg",
 
+    duration: "1 day",
     difficulty: "moderate",
     price: 60,
     distanceKm: 4,
@@ -120,6 +124,7 @@ export const tours = [
       "An immersive overnight adventure through rivers, waterfalls, and ancestral Amazonian lands.",
     image: "/images/tours/amazon/hero.jpg",
 
+    duration: "2 days",
     difficulty: "moderate",
     price: 120,
     distanceKm: 5,
@@ -149,6 +154,7 @@ export const tours = [
       "A challenging high-altitude trek through Andean landscapes culminating at Machu Picchu.",
     image: "/images/tours/salkantay/hero.jpg",
 
+    duration: "4 days",
     difficulty: "challenging",
     price: 280,
     distanceKm: 46,
