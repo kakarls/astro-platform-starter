@@ -1,31 +1,88 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
+import Layout from '../../layouts/Layout.astro';
+import { tours } from '../../data/tours';
 
-const explainer = `
-Journey through the wild Amazonian jungle and explore ancient Incan ruins.
-
-With Suyos Del Inca, you can explore the ancient routes of the Incan empire, travel down rivers where the Amazon and Andes mountains meet, and visit native communities, all with our expert local guides. 
-Are you ready for the adventure of a lifetime?
-`;
----
-
----
 const difficultyMap = {
-  easy: { label: "Easy", icon: "🟢" },
-  moderate: { label: "Moderate", icon: "🟡" },
-  challenging: { label: "Challenging", icon: "🔴" }
+  easy: { label: 'Easy', icon: '🟢' },
+  moderate: { label: 'Moderate', icon: '🟡' },
+  challenging: { label: 'Challenging', icon: '🔴' }
 };
 ---
 
+<Layout title="Tours and Prices">
+  <h1>Tours and Prices</h1>
+  <p>The best of local nature and cultural tours awaits</p>
 
-<Layout title="Suyos Del Inca">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">welcome to SUYOS DEL INCA</h1>
-    <img src="/images/Machu Picchu.png" alt="Machu Picchu" />
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="/tours" class="btn btn-lg sm:min-w-64">See Tour Options</a>
-    </p>
+  <section class="tour-grid">
+    {tours.map((tour) => (
+      <a href={`/tours/${tour.slug}`} class="tour-card">
+        <img src={tour.image} alt={tour.title} />
+
+        <div class="card-content">
+          <h2>{tour.title}</h2>
+          <p>{tour.summary}</p>
+
+          <div class="meta">
+            <span>
+              {difficultyMap[tour.difficulty].icon}
+              {difficultyMap[tour.difficulty].label}
+            </span>
+            <span>${tour.price} USD</span>
+          </div>
+        </div>
+      </a>
+    ))}
+  </section>
 </Layout>
+
+<style>
+.tour-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.tour-card {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+}
+
+.tour-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.tour-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem 1.1rem 1.25rem;
+}
+
+.card-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #444;
+}
+</style>
