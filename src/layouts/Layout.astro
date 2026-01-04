@@ -11,6 +11,29 @@ interface Props {
 
 const { title } = Astro.props;
 ---
+<script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  name: tour.title,
+  description: tour.summary,
+  image: tour.gallery,
+  touristType: "Adventure travelers",
+  itinerary: tour.itinerary.map((step, index) => ({
+    "@type": "TouristTrip",
+    position: index + 1,
+    name: step
+  })),
+  offers: {
+    "@type": "Offer",
+    price: tour.price,
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock"
+  }
+})}
+</script>
+
+
 
 <!doctype html>
 <html lang="en">
