@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { tours } from '../../data/tours';
+
+const { slug } = Astro.params;
+const tour = tours.find(t => t.slug === slug);
+
+if (!tour) throw new Error('Tour not found');
+---
+
+<Layout title={tour.title}>
+  <article class="tour-detail">
+    <h1>{tour.title}</h1>
+
+    <img src={tour.image} alt={tour.title} class="hero" />
+
+    <section class="facts">
+      <div><strong>Price:</strong> ${tour.price} USD</div>
+      <div><strong>Difficulty:</strong> {tour.difficulty}</div>
+      <div><strong>Hiking distance:</strong> {tour.distanceKm} km</div>
+      <div>
+        <strong>Meals:</strong>
+        B {tour.meals.breakfast} ·
+        L {tour.meals.lunch} ·
+        D {tour.meals.dinner}
+      </div>
+    </section>
+
+    <section>
+      <h2>Itinerary</h2>
+      <ul>
+        {tour.itinerary.map(step => (
+          <li>{step}</li>
+        ))}
+      </ul>
+    </section>
+  </article>
+</Layout>
+
+<style>
+.tour-detail {
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero {
+  width: 100%;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  background: #f6f6f6;
+  padding: 1rem;
+  border-radius: 8px;
+}
+</style>
