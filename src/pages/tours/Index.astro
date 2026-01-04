@@ -1,218 +1,65 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
+import { tours } from '../../data/tours';
 ---
 
 <Layout title="Tours and Prices">
-<h1>Tours and Prices</h1>
-<p>The best of local nature and cultural tours awaits</p>
+  <h1>Tours and Prices</h1>
+  <p>The best of local nature and cultural tours awaits</p>
 
-<ul class="tour-list">
-
-<li class="tour-item">
-<button class="tour-toggle">
-Illapani Waterfall and Chocolate Farm - Day Tour
-<span class="arrow">▼</span>
-</button>
-<div class="tour-details">
-<p>Itinerary:</p>
-<p>8:00 am depart from Quillabamba - our shuttle will pick you up from your hotel</p>
-<p>Hike for approximately 40 minutes to reach the Illapani waterfall</p>
-<p>After some photos and a swim, we will drive to the Chahuares Chocolate farm for a tour of the growing and manufacturing process, and a taste of fresh chocolate</p>
-<p>Enjoy a traditional Peruvian lunch and relax at the farm</p>
-<p>We will head back to Quillabamba in the afternoon, around 4:00 pm </p>
-<p>  </p>
-<p><strong>Price:</strong> $45 USD</p>
-</div>
-</li>
-
-<li class="tour-item">
-<button class="tour-toggle">
-Duende Waterfall and Coffee Farm - Day Tour
-<span class="arrow">▼</span>
-</button>
-<div class="tour-details">
-<p>Itinerary:</p>
-<p>Depart from Quillabamba at 9:00 am - we will pick you up from your hotel</p>
-<p>After a scenic 45 minute drive, we will reach the D'Morveli coffee farm</p>
-<p>We will hike for about 30 minutes through cofee fields to reach the Duende Waterfall, where you can go for a swim and take pictures</p>
-<p>Then we will return to the farm for a tour and lesson on how coffee is grown and prepared, including samples of 4 varieties of coffee. </p>
-<p>After the coffee tour, enjoy a traditional Peruvian lunch at the farm</p>
-<p>We will return to Quillabmamba in the afternoon, and drop you off at your accommodation</p>
-<p></p>
-<p></p>
-<p><strong>Price:</strong> $45 USD</p>
-</div>
-</li>
-
-<li class="tour-item">
-<button class="tour-toggle">
-Canopy Zipline and Thermal Baths - Day Tour
-<span class="arrow">▼</span>
-</button>
-<div class="tour-details">
-<p>Adrenaline and relaxation all in one day</p>
-<p>8:30 am depart from Quillabamba - our shuttle will pick you up from your hotel</p>
-<p>We'll drive for an hour and fifteen minutes through the scenic Andes mountains to reach Santa Theresa, then from there it is 15 more minutes to the zipline</p>
-<p>Gear up with a harness and helmet,then itś time to zipline! You will do a full circuit that includes a 500m, 800m, and 1km zipline, and a bride walk over the treetops</p>
-<p>Enjoy a traditional Peruvian lunch while looking out at the forest canopy</p>
-<p>After lunch, we will head to the thermal baths of Cocalmayo, where you can swim and relax in multiple pools of different temperatures</p>
-<p>Our shuttle will take you back to Quillabamba in the afternoon</p>
-<p><strong>Price:</strong> $55 USD</p>
-</div>
-</li>
-
-<li class="tour-item">
-<button class="tour-toggle">
-Yanay Mandor Waterfall and White Water Rafting - Day Tour
-<span class="arrow">▼</span>
-</button>
-<div class="tour-details">
-<p>Itinerary</p>
-<p>8:30 am depart from Quillabamba - our shuttle will pick you up from your hotel</p>
-<p>We'll drive for 50 minutes through the scenic Andes mountains to reach the start of the trail</p>
-<p>Hike for approximately 35 minutes to reach the Yanay Mandor waterfall, where you can swim and take pictures</p>
-<p>Hike back to the Yanay farm to try some of the local coffee and have a traditional Peruvian lunch</p>
-<p>After lunch, we will drive to Vilcanota and begin our rafting journey</p>
-<p>Experience the thrill of whitewater rafting over 6km, about 2 hours</p>
-<p>Our shuttle will take you back to your hotel in Quillabamba in the afternoon</p>
-<p><strong>Price:</strong> $60 USD</p>
-</div>
-</li>
-
-<li class="tour-item">
-<button class="tour-toggle">
-Amazonian Waterfall Valley Camping - 2 Day Tour
-<span class="arrow">▼</span>
-</button>
-<div class="tour-details">
-<p>Itinerary</p>
-<p>Day 1</p>
-<p>2:30 am depart from Quillabamba - our shuttle will pick you up from your hotel</p>
-<p>We'll drive for 5 hours to reach the river port at Ivochote </p>
-<p>Enjoy a traditional Peruvian breakfast in Ivochote before boarding the boat</p>
-<p>Admire the increadible nature of the Amazon as we cruise the Urubamba and Yoyato rivers, through the Megantoni Nature Reserve</p>
-<p>Upon arrival at our campsite, we will setup tents and settle in </p>
-<p>Savor the local delicacy of fried Paco fish for lunch (vegetarian meals can be made upon request)</p>
-<p>After lunch we will take a tour of the Yoyato river and bathe in the turquoise water</p>
-<p>In the evening we will have dinner and then prepare a campfire where you will learn about the legends of the Pongo de Mainique, and the local communities of the Urubamba river</p>
-<p>Spend a magical night under the stars in the Amazon</p>
-<p> </p>
-<p>Day 2</p>
-<p>In the morning we will take a boatride through the magnificent Pongo de Mainique, a canyon lined with waterfalls. </p>
-<p>Get a chance to see the Osheto, a mountain in the shape of a monkey that protects the entrance of these ancestral lands</p>
-<p>Meet our local guide Pando, and enjoy a traditional breakfast in his home while learning about the local customs</p>
-<p>Return once again through the Pongo de Mainique, this time with a deeper understanding of the cultural context and the magic of the region</p>
-<p>we will return to Ivochote by boat, and have lunch before returning to Quillabamba by shuttle</p>
-<p> </p>
-<p><strong>Price:</strong> $120 USD</p>
-</div>
-</li>
-
-<li class="tour-item">
-<button class="tour-toggle">
-Salkantay Trek to Machu Picchu - 4 Day Tour
-<span class="arrow">▼</span>
-</button>
-<div class="tour-details">
-<p>Itinerary</p>
-<p>Day 1</p>
-<p>4:00 am depart from Cusco - our shuttle will pick you up from your hotel</p>
-<p>We'll drive for 2.5 hours towards Mollepata, then take another car for 1 hour to Soraypampa where we will have breakfast </p>
-<p>After a hearty breakfast, we'll begin our Trek!</p>
-<p>We'll walk for 4 hours, with occaisonaly breaks to rest and soak in the beauty of the mountains around us. </p>
-<p>We'll have lunch in Waryacmachay, then continue hiking until we reach our camp around 5:00 PM.  </p>
-<p>We will have a traditional dinner, then relax and unwind. </p>
-<p> </p>
-<p>Day 2</p>
-<p>We'll wake up around 7:30, have breakfast, and then begin our hike along the river, listening to the birds and the running water as we trek. </p>
-<p>Around midday we will reach Winaypoqo, where we will rest and have lunch.</p>
-<p>We'll continue hiking for about 4 more hours until we reach our camp at Lucmabamba. </p>
-<p>Local chefs will prepare a hearty meal, and we'll have time for some stargazing after dinner. </p>
-<p></p>
-<p>Day 3</p>
-<p>We'll wake up at 6:00 Am, have a quick breafast, and begin our trek. </p>
-<p>Today our route begins on one of the ancient Incan trails, and we'll walk through coffee fields and forest.</p>
-<p>We'll stop for lunch around the hydroelectric plant, then continue for 3 more hours to Machu Picchu village.</p>
-<p></p>
-<p>Day 4 </p>
-<p>Today is the big day! We'll get an early start and leave camp by 6:00 AM in order to arrive at the gates as they open</p>
-<p>Enjoy 4 hours in the archealogical site, taking in the breathtaking views and learning about the signficance of the site.</p>
-<p>Our guides will point out importnat symbols and structures,and make sure you get the perfect photo ops.</p>
-<p>After leaving the historic site, we'll walk down to the town, and there our tour will end.</p>
-<p>Browse the souvenir shops and enjoy a meal in town before you continue on with your journey.</p>
-<p></p>
-
-<p><strong>Price:</strong> $280 USD</p>
-</div>
-</li>
-
-
-</ul>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-const toggles = document.querySelectorAll('.tour-toggle');
-
-toggles.forEach((toggle) => {
-toggle.addEventListener('click', () => {
-const details = toggle.nextElementSibling;
-const arrow = toggle.querySelector('.arrow');
-
-// Toggle visibility
-details.classList.toggle('open');
-
-// Toggle arrow direction
-arrow.textContent = details.classList.contains('open') ? '▲' : '▼';
-});
-});
-});
-</script>
+  <section class="tour-grid">
+    {tours.map((tour) => (
+      <a href={`/tours/${tour.slug}`} class="tour-card">
+        <img src={tour.image} alt={tour.title} />
+        <div class="card-content">
+          <h2>{tour.title}</h2>
+          <p>{tour.summary}</p>
+          <div class="meta">
+            <span>{tour.difficulty}</span>
+            <span>${tour.price} USD</span>
+          </div>
+        </div>
+      </a>
+    ))}
+  </section>
+</Layout>
 
 <style>
-.tour-list {
-list-style: none;
-padding: 0;
-margin: 0;
+.tour-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.tour-item {
-margin-bottom: 1rem;
-border: 1px solid #ccc;
-border-radius: 6px;
-overflow: hidden;
+.tour-card {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.tour-toggle {
-width: 100%;
-background: none;
-border: none;
-padding: 1rem;
-text-align: left;
-font-size: 1.2rem;
-font-weight: bold;
-cursor: pointer;
-background-color: #247047;
-display: flex;
-justify-content: space-between;
-align-items: center;
+.tour-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.tour-toggle:hover {
-background-color: #B18237;
+.tour-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.tour-details {
-display: none;
-padding: 1rem;
-background-color: none;
+.card-content {
+  padding: 1rem;
 }
 
-.tour-details.open {
-display: block;
-}
-
-.arrow {
-font-size: 1rem;
-transition: transform 0.3s ease;
+.meta {
+  margin-top: .75rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: .9rem;
+  color: #555;
 }
 </style>
-</Layout>
