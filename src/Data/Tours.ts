@@ -43,9 +43,9 @@ export const tours = [
     meals: { breakfast: 0, lunch: 1, dinner: 0 },
 
     gallery: [
-      "/images/tours/duende/1.jpg",
-      "/images/tours/duende/2.jpg",
-      "/images/tours/duende/3.jpg"
+      "/images/tours/coffee/1.jpg",
+      "/images/tours/coffee/2.jpg",
+      "/images/tours/coffee/3.jpg"
     ],
 
     itinerary: [
