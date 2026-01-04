@@ -1,23 +1,59 @@
+
 ---
 import Layout from '../../layouts/Layout.astro';
 import { tours } from '../../data/tours';
 
 const { slug } = Astro.params;
-const tour = tours.find(t => t.slug === slug);
+const tour = tours.find((t) => t.slug === slug);
 
-if (!tour) throw new Error('Tour not found');
+if (!tour) {
+  throw new Error('Tour not found');
+}
+
+const difficultyMap = {
+  easy: { label: 'Easy', icon: '🟢' },
+  moderate: { label: 'Moderate', icon: '🟡' },
+  challenging: { label: 'Challenging', icon: '🔴' }
+};
 ---
 
 <Layout title={tour.title}>
   <article class="tour-detail">
+
+    <!-- Title -->
     <h1>{tour.title}</h1>
 
-    <img src={tour.image} alt={tour.title} class="hero" />
+    <!-- Image Gallery -->
+    <section class="gallery">
+      <img
+        src={tour.image}
+        alt={tour.title}
+        class="gallery-hero"
+      />
 
+      <div class="gallery-grid">
+        {tour.gallery.map((img) => (
+          <img src={img} alt={tour.title} />
+        ))}
+      </div>
+    </section>
+
+    <!-- Quick Facts -->
     <section class="facts">
-      <div><strong>Price:</strong> ${tour.price} USD</div>
-      <div><strong>Difficulty:</strong> {tour.difficulty}</div>
-      <div><strong>Hiking distance:</strong> {tour.distanceKm} km</div>
+      <div>
+        <strong>Difficulty:</strong>
+        {difficultyMap[tour.difficulty].icon}
+        {difficultyMap[tour.difficulty].label}
+      </div>
+
+      <div>
+        <strong>Price:</strong> ${tour.price} USD
+      </div>
+
+      <div>
+        <strong>Hiking distance:</strong> {tour.distanceKm} km
+      </div>
+
       <div>
         <strong>Meals:</strong>
         B {tour.meals.breakfast} ·
@@ -26,35 +62,91 @@ if (!tour) throw new Error('Tour not found');
       </div>
     </section>
 
-    <section>
+    <!-- Itinerary -->
+    <section class="itinerary">
       <h2>Itinerary</h2>
       <ul>
-        {tour.itinerary.map(step => (
+        {tour.itinerary.map((step) => (
           <li>{step}</li>
         ))}
       </ul>
     </section>
+
+    <!-- Call to Action -->
+    <a href="/contact" class="cta">
+      Book this tour
+    </a>
+
   </article>
 </Layout>
 
 <style>
 .tour-detail {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
+  padding-bottom: 2rem;
 }
 
-.hero {
+/* Gallery */
+.gallery {
+  margin: 2rem 0;
+}
+
+.gallery-hero {
   width: 100%;
-  border-radius: 8px;
-  margin: 1.5rem 0;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Facts */
 .facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
   background: #f6f6f6;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 1.25rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+/* Itinerary */
+.itinerary ul {
+  padding-left: 1.2rem;
+}
+
+.itinerary li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+/* CTA */
+.cta {
+  display: inline-block;
+  margin-top: 2rem;
+  background: #247047;
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta:hover {
+  background: #1c5b3a;
 }
 </style>
