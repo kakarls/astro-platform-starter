@@ -1,7 +1,7 @@
 
 ---
-import Layout from '../../layouts/Layout.astro';
-import { tours } from '../../data/tours';
+import Layout from '../layouts/Layout.astro';
+import { tours } from '../data/tours';
 
 const { slug } = Astro.params;
 const tour = tours.find((t) => t.slug === slug);
