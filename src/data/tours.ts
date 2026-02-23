@@ -166,22 +166,22 @@ export const tours = [
     ],
 
     itinerary: [
-      "Option 1:"
+      "Option 1:",
       "4:30 am departure from Cusco to Cachora (4 hours by car)",
       "Enjoy a local breakfast before beginning your 4 hour trek",
       "Marvel at one of the deepest valleys in Peru, as you ascend to the cloud forest",
       "Enjoy locally cooked food and a comfortable night in a lodge",
       "Day 2 begins with coffee, coca leaves, and a hearty breakfast",
-      "Trek for 3.5-4 hours, and after a lunch break, we will continue for another 2.5 hours to our lodge"
-      "Take a much needed break at the lodge, and after dinner you will have time to stargaze"
-      "After breakfast on Day 3 we will hike for 2 hours to the entrance of Choquequirao"
-      "Your guide will give you a tour of the site, which is twice as large as Macchu Picchu, and recount the history of this site known as the "cradle of gold""
-      "After exploring Choquequirao, you will head back towards the lodge for lunch, and continue with your descent"
-      "Day 4 will be our final day, descending back down to the highlands"
-      "Option 2:"
-      "Early departure from Quillabamba to Yanama (3 hours by car)"
-      "Enjoy a local breakfast in Yanama before beginning your 4 hour trek"
-      "Your guide and porters will setup camp for you and prepare a lunch at the campsite"
+      "Trek for 3.5-4 hours, and after a lunch break, we will continue for another 2.5 hours to our lodge",
+      "Take a much needed break at the lodge, and after dinner you will have time to stargaze",
+      "After breakfast on Day 3 we will hike for 2 hours to the entrance of Choquequirao",
+      "Your guide will give you a tour of the site, which is twice as large as Macchu Picchu, and recount the history of this site known as the "cradle of gold"",
+      "After exploring Choquequirao, you will head back towards the lodge for lunch, and continue with your descent",
+      "Day 4 will be our final day, descending back down to the highlands",
+      "Option 2:",
+      "Early departure from Quillabamba to Yanama (3 hours by car)",
+      "Enjoy a local breakfast in Yanama before beginning your 4 hour trek",
+      "Your guide and porters will setup camp for you and prepare a lunch at the campsite",
       "On day 2, you will get an early start and continue hiking 2 hours to Choquequirao"
       
     ]
