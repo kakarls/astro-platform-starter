@@ -1,17 +1,12 @@
 ---
-import { tours } from '../../data/tours.ts'; 
+import Layout from '../../layouts/Layout.astro';
+import { tours } from '../../data/tours';
 
 export function getStaticPaths() {
   return tours.map((tour) => ({
     params: { slug: tour.slug },
   }));
 }
-
-const { slug } = Astro.params;
-const tour = tours.find((t) => t.slug === slug);
-
-import Layout from '../../layouts/Layout.astro';
-import { tours } from '../../data/tours';
 
 const { slug } = Astro.params;
 const tour = tours.find((t) => t.slug === slug);
