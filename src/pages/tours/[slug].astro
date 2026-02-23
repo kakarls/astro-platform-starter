@@ -9,9 +9,7 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 const tour = tours.find((t) => t.slug === slug);
----
 
----
 import Layout from '../../layouts/Layout.astro';
 import { tours } from '../../data/tours';
 
