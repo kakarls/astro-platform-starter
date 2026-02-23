@@ -175,7 +175,7 @@ export const tours = [
       "Trek for 3.5-4 hours, and after a lunch break, we will continue for another 2.5 hours to our lodge",
       "Take a much needed break at the lodge, and after dinner you will have time to stargaze",
       "After breakfast on Day 3 we will hike for 2 hours to the entrance of Choquequirao",
-      "Your guide will give you a tour of the site, which is twice as large as Macchu Picchu, and recount the history of this site known as the "cradle of gold"",
+      "Your guide will give you a tour of the site, which is twice as large as Macchu Picchu, and recount the history of this site known as the Cradle of Gold",
       "After exploring Choquequirao, you will head back towards the lodge for lunch, and continue with your descent",
       "Day 4 will be our final day, descending back down to the highlands",
       "Option 2:",
