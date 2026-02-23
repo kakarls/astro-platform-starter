@@ -1,3 +1,15 @@
+---
+import { tours } from '../../data/tours.ts'; 
+
+export function getStaticPaths() {
+  return tours.map((tour) => ({
+    params: { slug: tour.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const tour = tours.find((t) => t.slug === slug);
+---
 
 ---
 import Layout from '../../layouts/Layout.astro';
