@@ -4,7 +4,7 @@ export const tours = [
     title: "Illapani Waterfall & Chocolate Farm",
     summary:
       "A relaxed jungle hike to a beautiful waterfall combined with a visit to a local chocolate farm.",
-    image: "/images/tours/illapani/hero.jpg",
+    image: "/images/tours/illapani/illapani.JPG",
 
     duration: "1 day",
     difficulty: "easy",
@@ -13,8 +13,8 @@ export const tours = [
     meals: { breakfast: 0, lunch: 1, dinner: 0 },
 
     gallery: [
-      "/images/tours/illapani/1.jpg",
-      "/images/tours/illapani/2.jpg",
+      "/images/tours/illapani/illapani1.JPG",
+      "/images/tours/illapani/illapani2.JPG",
       "/images/tours/illapani/3.jpg"
     ],
 
