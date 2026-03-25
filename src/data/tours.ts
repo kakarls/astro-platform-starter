@@ -151,7 +151,7 @@ export const tours = [
     title: "Choquequirao Trek (4 Days)",
     summary:
       "A challenging high-altitude trek through Andean landscapes culminating at the Incan ruins of Choquequirao.",
-    image: "/images/tours/choquequirao/hero.jpg",
+    image: "/images/tours/choquequirao/Choquequiraohero.jpg.JPG",
 
     duration: "4 days",
     difficulty: "challenging",
