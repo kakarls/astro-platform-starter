@@ -33,7 +33,7 @@ export const tours = [
     title: "Duende Waterfall & Coffee Farm",
     summary:
       "A scenic walk through coffee fields ending at a hidden waterfall, plus a hands-on coffee tour.",
-    image: "/images/tours/duende/hero.jpg",
+    image: "/images/tours/coffee/duende.PNG.dng",
 
     duration: "1 day",
     difficulty: "easy",
@@ -42,7 +42,7 @@ export const tours = [
     meals: { breakfast: 0, lunch: 1, dinner: 0 },
 
     gallery: [
-      "/images/tours/coffee/1.jpg",
+      "/images/tours/coffee/coffee1.PNG.png",
       "/images/tours/coffee/2.jpg",
       "/images/tours/coffee/3.jpg"
     ],
