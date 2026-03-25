@@ -15,7 +15,7 @@ export const tours = [
     gallery: [
       "/images/tours/illapani/illapani1.JPG",
       "/images/tours/illapani/illapani2.JPG",
-      "/images/tours/illapani/3.jpg"
+      "/images/tours/illapani/chocolate.JPG"
     ],
 
     itinerary: [
