@@ -63,7 +63,7 @@ export const tours = [
     title: "Canopy Zipline & Thermal Baths",
     summary:
       "An adrenaline-filled zipline adventure followed by relaxation in the Cocalmayo thermal baths.",
-    image: "/images/tours/canopy/hero.jpg",
+    image: "/images/tours/thermalbaths/hero.jpg",
 
     duration: "1 day",
     difficulty: "easy",
@@ -72,8 +72,8 @@ export const tours = [
     meals: { breakfast: 0, lunch: 1, dinner: 0 },
 
     gallery: [
-      "/images/tours/canopy/1.jpg",
-      "/images/tours/canopy/2.jpg",
+      "/images/tours/thermalbaths/1.jpeg",
+      "/images/tours/thermalbaths/2.jpeg",
       "/images/tours/canopy/3.jpg"
     ],
 
