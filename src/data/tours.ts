@@ -121,7 +121,7 @@ export const tours = [
     title: "Pongo de Mainique: Amazonian Waterfall Valley Camping (2 Days)",
     summary:
       "An immersive overnight adventure through rivers, waterfalls, and ancestral Amazonian lands.",
-    image: "/images/tours/amazon/hero.jpg",
+    image: "/images/tours/pongo/pongohero.jpeg",
 
     duration: "2 days",
     difficulty: "moderate",
@@ -130,9 +130,9 @@ export const tours = [
     meals: { breakfast: 2, lunch: 2, dinner: 1 },
 
     gallery: [
-      "/images/tours/amazon/1.jpg",
-      "/images/tours/amazon/2.jpg",
-      "/images/tours/amazon/3.jpg"
+      "/images/tours/pongo/pongo0.JPG",
+      "/images/tours/pongo/pongo2.JPG",
+      "/images/tours/pongo/3.jpg"
     ],
 
     itinerary: [
