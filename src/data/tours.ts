@@ -118,7 +118,7 @@ export const tours = [
 
   {
     slug: "amazonian-waterfall-valley-camping",
-    title: "Pongo de Mainique: Amazonian Waterfall Valley Camping (2 Days)",
+    title: "Pongo de Mainique: boating in the Amazon (2 Days)",
     summary:
       "An immersive overnight adventure through rivers, waterfalls, and ancestral Amazonian lands.",
     image: "/images/tours/pongo/pongohero.jpeg",
