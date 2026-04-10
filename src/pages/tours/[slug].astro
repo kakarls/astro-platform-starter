@@ -350,7 +350,7 @@ const difficultyMap = {
   // ── Submit to Netlify Function ─────────────────────────────────────────────
   async function submitBooking(method) {
     try {
-      const res = await fetch('/.netlify/functions/booking', {
+      const res = await fetch('/api/booking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
