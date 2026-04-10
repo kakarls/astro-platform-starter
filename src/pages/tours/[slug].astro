@@ -24,46 +24,55 @@ const difficultyMap = {
 
 <Layout title={tour.title}>
   <article class="tour-detail">
-<script type="application/ld+json">
-{JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "TouristTrip",
-  name: tour.title,
-  description: tour.summary,
-  image: tour.gallery,
-  touristType: "Adventure travelers",
-  itinerary: tour.itinerary.map((step, index) => ({
-    "@type": "TouristTrip",
-    position: index + 1,
-    name: step
-  })),
-  offers: {
-    "@type": "Offer",
-    price: tour.price,
-    priceCurrency: "USD",
-    availability: "https://schema.org/InStock"
-  }
-})}
-</script>
+
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TouristTrip",
+        name: tour.title,
+        description: tour.summary,
+        image: tour.gallery,
+        touristType: "Adventure travelers",
+        itinerary: tour.itinerary.map((step, index) => ({
+          "@type": "TouristTrip",
+          position: index + 1,
+          name: step
+        })),
+        offers: {
+          "@type": "Offer",
+          price: tour.price,
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock"
+        }
+      })}
+    </script>
+
     <!-- Title -->
     <header class="tour-header">
-  <h1>{tour.title}</h1>
-  <span class="duration">{tour.duration}</span>
-</header>
+      <h1>{tour.title}</h1>
+      <span class="duration">{tour.duration}</span>
+    </header>
 
     <!-- Image Gallery -->
     <section class="gallery">
       <img
         src={tour.image}
-        alt={tour.title}
+        alt={`${tour.title} — main view`}
         class="gallery-hero"
+        loading="eager"
       />
-
-      <div class="gallery-grid">
-        {tour.gallery.map((img) => (
-          <img src={img} alt={tour.title} />
-        ))}
-      </div>
+      {tour.gallery && tour.gallery.length > 0 && (
+        <div class="gallery-grid">
+          {tour.gallery.map((img, i) => (
+            <img
+              src={img}
+              alt={`${tour.title} — photo ${i + 1}`}
+              class="gallery-thumb"
+              loading="lazy"
+            />
+          ))}
+        </div>
+      )}
     </section>
 
     <!-- Quick Facts -->
@@ -73,15 +82,12 @@ const difficultyMap = {
         {difficultyMap[tour.difficulty].icon}
         {difficultyMap[tour.difficulty].label}
       </div>
-
       <div>
-        <strong>Price:</strong> ${tour.price} USD
+        <strong>Price:</strong> ${tour.price} USD per person
       </div>
-
       <div>
         <strong>Hiking distance:</strong> {tour.distanceKm} km
       </div>
-
       <div>
         <strong>Meals:</strong>
         B {tour.meals.breakfast} ·
@@ -101,21 +107,294 @@ const difficultyMap = {
     </section>
 
     <!-- Call to Action -->
-    <a href="/contact" class="cta">
-      Book this tour
-    </a>
+    <button class="cta" id="open-booking">Book this tour</button>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" id="close-booking" aria-label="Close">&times;</button>
+
+        <h2 id="modal-title">Book Your Tour</h2>
+
+        <form id="booking-form" novalidate>
+
+          <!-- Tour name (pre-filled, read-only) -->
+          <div class="field">
+            <label for="tour-name">Tour</label>
+            <input type="text" id="tour-name" name="tourName" value={tour.title} readonly />
+          </div>
+
+          <!-- Customer name -->
+          <div class="field">
+            <label for="customer-name">Your Name</label>
+            <input type="text" id="customer-name" name="customerName" placeholder="Jane Smith" required />
+          </div>
+
+          <!-- Customer email -->
+          <div class="field">
+            <label for="customer-email">Your Email</label>
+            <input type="email" id="customer-email" name="customerEmail" placeholder="jane@example.com" required />
+            <span class="field-hint">Your booking confirmation will be sent here</span>
+          </div>
+
+          <!-- Start date -->
+          <div class="field">
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date" name="startDate" required />
+            <span class="field-hint">Must be at least 2 days from today</span>
+          </div>
+
+          <!-- Number of people -->
+          <div class="field">
+            <label for="num-people">Number of People</label>
+            <input type="number" id="num-people" name="numPeople" min="1" max="20" value="1" required />
+          </div>
+
+          <!-- Total cost display -->
+          <div class="cost-box">
+            <span>Total Cost</span>
+            <strong id="total-cost">${tour.price} USD</strong>
+          </div>
+
+          <!-- Payment method -->
+          <div class="field">
+            <label>Payment Method</label>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="paypal" checked />
+                <span>💳 PayPal</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="cash" />
+                <span>💵 Pay in Cash</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- PayPal button renders here -->
+          <div id="paypal-button-container"></div>
+
+          <!-- Cash submit button (shown only when cash is selected) -->
+          <button type="submit" id="cash-submit" class="submit-btn" style="display:none;">
+            Confirm Booking (Pay in Cash)
+          </button>
+
+          <p id="form-success" class="form-success" style="display:none;">
+            ✅ Booking received! Check your email for confirmation.
+          </p>
+          <p id="form-error" class="form-error" style="display:none;">
+            ⚠️ Something went wrong. Please try again or contact us directly.
+          </p>
+
+        </form>
+      </div>
+    </div>
 
   </article>
 </Layout>
 
+<!-- PayPal SDK — replace YOUR_PAYPAL_CLIENT_ID with your actual client ID -->
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+
+<script define:vars={{ tourPrice: tour.price, tourTitle: tour.title, tourSlug: tour.slug }}>
+
+  const modal            = document.getElementById('booking-modal');
+  const openBtn          = document.getElementById('open-booking');
+  const closeBtn         = document.getElementById('close-booking');
+  const numPeopleInput   = document.getElementById('num-people');
+  const totalCostEl      = document.getElementById('total-cost');
+  const startDateInput   = document.getElementById('start-date');
+  const customerNameInput  = document.getElementById('customer-name');
+  const customerEmailInput = document.getElementById('customer-email');
+  const paymentRadios    = document.querySelectorAll('input[name="paymentMethod"]');
+  const paypalContainer  = document.getElementById('paypal-button-container');
+  const cashSubmit       = document.getElementById('cash-submit');
+  const successMsg       = document.getElementById('form-success');
+  const errorMsg         = document.getElementById('form-error');
+
+  // ── Set minimum date (2 days from today) ──────────────────────────────────
+  const minDate = new Date();
+  minDate.setDate(minDate.getDate() + 2);
+  const minDateStr = minDate.toISOString().split('T')[0];
+  startDateInput.min = minDateStr;
+  startDateInput.value = minDateStr;
+
+  // ── Total cost ─────────────────────────────────────────────────────────────
+  function getTotal() {
+    return tourPrice * (parseInt(numPeopleInput.value) || 1);
+  }
+
+  function updateTotal() {
+    totalCostEl.textContent = `$${getTotal().toLocaleString()} USD`;
+  }
+
+  numPeopleInput.addEventListener('input', () => {
+    updateTotal();
+    if (getPaymentMethod() === 'paypal') renderPayPal();
+  });
+
+  // ── Modal open / close ─────────────────────────────────────────────────────
+  openBtn.addEventListener('click', () => {
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (getPaymentMethod() === 'paypal') renderPayPal();
+  });
+
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  // ── Payment method toggle ──────────────────────────────────────────────────
+  function getPaymentMethod() {
+    return document.querySelector('input[name="paymentMethod"]:checked').value;
+  }
+
+  paymentRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      const method = getPaymentMethod();
+      cashSubmit.style.display = method === 'cash' ? 'block' : 'none';
+      paypalContainer.innerHTML = '';
+      if (method === 'paypal') renderPayPal();
+    });
+  });
+
+  // ── PayPal ─────────────────────────────────────────────────────────────────
+  function renderPayPal() {
+    paypalContainer.innerHTML = '';
+
+    if (typeof paypal === 'undefined') {
+      console.warn('PayPal SDK not loaded yet.');
+      return;
+    }
+
+    paypal.Buttons({
+      style: {
+        layout: 'vertical',
+        color: 'gold',
+        shape: 'rect',
+        label: 'pay'
+      },
+      createOrder(data, actions) {
+        if (!validateForm()) return Promise.reject(new Error('Invalid form'));
+        return actions.order.create({
+          purchase_units: [{
+            description: `${tourTitle} — ${numPeopleInput.value} person(s) — ${startDateInput.value}`,
+            amount: { value: getTotal().toFixed(2) }
+          }]
+        });
+      },
+      onApprove(data, actions) {
+        return actions.order.capture().then(() => {
+          submitBooking('paypal');
+        });
+      },
+      onError(err) {
+        console.error('PayPal error:', err);
+        errorMsg.style.display = 'block';
+      }
+    }).render('#paypal-button-container');
+  }
+
+  // ── Form validation ────────────────────────────────────────────────────────
+  function validateForm() {
+    // Name
+    if (!customerNameInput.value.trim()) {
+      customerNameInput.setCustomValidity('Please enter your name.');
+      customerNameInput.reportValidity();
+      return false;
+    }
+    customerNameInput.setCustomValidity('');
+
+    // Email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!customerEmailInput.value.trim() || !emailPattern.test(customerEmailInput.value)) {
+      customerEmailInput.setCustomValidity('Please enter a valid email address.');
+      customerEmailInput.reportValidity();
+      return false;
+    }
+    customerEmailInput.setCustomValidity('');
+
+    // Date
+    const selectedDate = new Date(startDateInput.value);
+    const earliest = new Date();
+    earliest.setDate(earliest.getDate() + 2);
+    earliest.setHours(0, 0, 0, 0);
+    if (!startDateInput.value || selectedDate < earliest) {
+      startDateInput.setCustomValidity('Please select a date at least 2 days from today.');
+      startDateInput.reportValidity();
+      return false;
+    }
+    startDateInput.setCustomValidity('');
+
+    // People
+    const people = parseInt(numPeopleInput.value);
+    if (!people || people < 1 || people > 20) {
+      numPeopleInput.setCustomValidity('Please enter between 1 and 20 people.');
+      numPeopleInput.reportValidity();
+      return false;
+    }
+    numPeopleInput.setCustomValidity('');
+
+    return true;
+  }
+
+  // ── Submit to Netlify Function ─────────────────────────────────────────────
+  async function submitBooking(method) {
+    try {
+      const res = await fetch('/.netlify/functions/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          tour: tourTitle,
+          slug: tourSlug,
+          customerName: customerNameInput.value.trim(),
+          customerEmail: customerEmailInput.value.trim(),
+          startDate: startDateInput.value,
+          numPeople: numPeopleInput.value,
+          total: getTotal(),
+          paymentMethod: method,
+        }),
+      });
+
+      if (res.ok) {
+        successMsg.style.display = 'block';
+        errorMsg.style.display = 'none';
+        setTimeout(closeModal, 3500);
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      errorMsg.style.display = 'block';
+    }
+  }
+
+  // ── Cash submit ────────────────────────────────────────────────────────────
+  cashSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+    submitBooking('cash');
+  });
+
+</script>
+
 <style>
+/* ── Page layout ─────────────────────────────────────────────────────────── */
 .tour-detail {
   max-width: 900px;
   margin: auto;
   padding-bottom: 2rem;
 }
 
-/* Gallery */
+/* ── Gallery ─────────────────────────────────────────────────────────────── */
 .gallery {
   margin: 2rem 0;
 }
@@ -132,16 +411,22 @@ const difficultyMap = {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 0.75rem;
+  margin-top: 0.75rem;
 }
 
-.gallery-grid img {
+.gallery-thumb {
   width: 100%;
   height: 140px;
   object-fit: cover;
   border-radius: 8px;
+  transition: opacity 0.2s;
 }
 
-/* Facts */
+.gallery-thumb:hover {
+  opacity: 0.85;
+}
+
+/* ── Facts ───────────────────────────────────────────────────────────────── */
 .facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -152,7 +437,7 @@ const difficultyMap = {
   margin: 2rem 0;
 }
 
-/* Itinerary */
+/* ── Itinerary ───────────────────────────────────────────────────────────── */
 .itinerary ul {
   padding-left: 1.2rem;
 }
@@ -162,7 +447,7 @@ const difficultyMap = {
   line-height: 1.5;
 }
 
-/* CTA */
+/* ── CTA button ──────────────────────────────────────────────────────────── */
 .cta {
   display: inline-block;
   margin-top: 2rem;
@@ -170,11 +455,191 @@ const difficultyMap = {
   color: white;
   padding: 0.75rem 1.75rem;
   border-radius: 6px;
-  text-decoration: none;
+  border: none;
+  font-size: 1rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .cta:hover {
   background: #1c5b3a;
 }
+
+/* ── Modal overlay ───────────────────────────────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-overlay.is-open {
+  display: flex;
+}
+
+.modal-box {
+  background: #0e2133;
+  border: 1px solid #1e4060;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-box h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #a0bdd0;
+}
+
+/* ── Form fields ─────────────────────────────────────────────────────────── */
+.field {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a0bdd0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="date"],
+.field input[type="number"] {
+  background: #0b1b2b;
+  border: 1px solid #1e4060;
+  border-radius: 6px;
+  color: white;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field input[type="text"]::placeholder,
+.field input[type="email"]::placeholder {
+  color: #4a6a80;
+}
+
+.field input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.field input[readonly] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.field-hint {
+  font-size: 0.78rem;
+  color: #6a90a8;
+}
+
+/* ── Cost display ────────────────────────────────────────────────────────── */
+.cost-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #193a59;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.cost-box strong {
+  font-size: 1.2rem;
+  color: #4dd68c;
+}
+
+/* ── Payment options ─────────────────────────────────────────────────────── */
+.payment-options {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background: #0b1b2b;
+  border: 1px solid #1e4060;
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.payment-option:has(input:checked) {
+  border-color: #247047;
+}
+
+.payment-option input {
+  accent-color: #247047;
+}
+
+/* ── Submit button ───────────────────────────────────────────────────────── */
+.submit-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: #247047;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+  background: #1c5b3a;
+}
+
+/* ── Feedback messages ───────────────────────────────────────────────────── */
+.form-success {
+  color: #4dd68c;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.form-error {
+  color: #f87171;
+  margin-top: 0.75rem;
+}
 </style>
+  
+  
+
