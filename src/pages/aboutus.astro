@@ -3,141 +3,387 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="About Us">
+
+  <!-- Hero -->
   <section class="about-hero">
     <div class="container">
       <h1>About Suyos del Inca</h1>
       <p class="intro">
-        We are a passionate team dedicated to sharing the rich history, culture,
-        and landscapes of Peru through unforgettable travel experiences.
+        We are a Quillabamba-based tour company dedicated to sharing the
+        history, culture, and landscapes of Peru through authentic,
+        unforgettable experiences — beyond the typical tourist trail.
       </p>
     </div>
   </section>
 
+  <!-- Story + Mission combined -->
   <section class="our-story">
-    <div class="container">
-      <h2>Our Story</h2>
-      <p>
-        Suyos del Inca was born from a love for adventure and a desire to
-        connect travelers with the authentic spirit of the Andes. Since our
-        founding, we’ve guided visitors through breathtaking destinations,
-        helping them experience Peru beyond the typical tourist routes, and 
-        incorporating unique culutral expereinces into the adventure. 
-      </p>
-    </div>
-  </section>
-
-  <section class="our-mission">
-    <div class="container">
-      <h2>Our Mission</h2>
-      <p>
-        To create meaningful journeys that celebrate Peru’s natural beauty,
-        ancestral wisdom, and vibrant communities — all while promoting
-        sustainable and responsible tourism.
-      </p>
-    </div>
-  </section>
-
-  <section class="our-team">
-    <div class="container">
-      <h2>Meet the Team</h2>
-      <div class="team-grid">
-        <div class="team-member">
-    //      <img src="/images/marco.jpg" alt="Team member photo" />
-          <h3>Marco</h3>
-          <p>Founder & Lead Guide</p>
+    <div class="container story-grid">
+      <div class="story-text">
+        <h2>Our Story</h2>
+        <p>
+          Suyos del Inca was born from a deep love for the Andes and a desire
+          to connect travelers with the authentic spirit of Peru. Based in
+          Quillabamba — a lush gateway to the cloud forest and the Sacred
+          Valley — we are perfectly positioned to offer experiences that most
+          visitors never get to see.
+        </p>
+        <p>
+          From the very beginning, our goal has been simple: to go beyond
+          the postcard. Every tour we design weaves together adventure,
+          history, and genuine cultural encounters, giving our guests a true
+          sense of what life in the Andes looks and feels like.
+        </p>
+        <p>
+          We have welcomed travelers from Peru, Europe, and beyond — and every
+          single group has left knowing they experienced something rare.
+        </p>
+      </div>
+      <div class="story-values">
+        <div class="value-card">
+          <span class="value-icon">🏔️</span>
+          <h3>Authentic</h3>
+          <p>We design routes and experiences that go beyond the standard tourist circuit.</p>
         </div>
-        <div class="team-member">
-   //       <img src="/images/jose.jpg" alt="Team member photo" />
-          <h3>Jose Luis</h3>
-          <p>Operations Manager</p>
+        <div class="value-card">
+          <span class="value-icon">🌿</span>
+          <h3>Sustainable</h3>
+          <p>We travel responsibly, supporting local communities and protecting the landscapes we explore.</p>
         </div>
-        <div class="team-member">
-    //      <img src="/images/kaci.jpg" alt="Team member photo" />
-          <h3>Kaci</h3>
-          <p>Business Development Manager</p>
+        <div class="value-card">
+          <span class="value-icon">🤝</span>
+          <h3>Personal</h3>
+          <p>Small groups, expert local guides, and a genuine passion for sharing Peru's story.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Mission banner -->
+  <section class="mission-banner">
+    <div class="container">
+      <blockquote>
+        "To create meaningful journeys that celebrate Peru's natural beauty,
+        ancestral wisdom, and vibrant communities — while promoting sustainable
+        and responsible tourism."
+      </blockquote>
+      <cite>— Our Mission</cite>
+    </div>
+  </section>
+
+  <!-- Why Quillabamba -->
+  <section class="why-quillabamba">
+    <div class="container">
+      <h2>Why Quillabamba?</h2>
+      <p>
+        Most Peru itineraries begin and end in Cusco. We are based in
+        Quillabamba — the "City of Eternal Youth" — nestled in the high jungle
+        where the Andes meet the Amazon basin. This gives us access to cloud
+        forest trails, sacred Inca sites, and living communities that the
+        average traveler simply never reaches. It is our home, and we are
+        proud to share it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Meet the Team -->
+  <section class="our-team">
+    <div class="container">
+      <h2>Meet the Team</h2>
+      <p class="team-intro">
+        Our small, dedicated team brings together local expertise, operational
+        experience, and a shared passion for Peru.
+      </p>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-photo-placeholder">
+            <span>M</span>
+          </div>
+          <h3>Marco</h3>
+          <p class="team-role">Founder & Lead Guide</p>
+          <p class="team-bio">Born and raised in the Andes, Marco brings years of experience guiding travelers through Peru's most extraordinary landscapes.</p>
+        </div>
+        <div class="team-member">
+          <div class="team-photo-placeholder">
+            <span>JL</span>
+          </div>
+          <h3>Jose Luis</h3>
+          <p class="team-role">Operations Manager</p>
+          <p class="team-bio">Jose Luis keeps every tour running smoothly, coordinating logistics so our guests can focus entirely on the experience.</p>
+        </div>
+        <div class="team-member">
+          <div class="team-photo-placeholder">
+            <span>K</span>
+          </div>
+          <h3>Kaci</h3>
+          <p class="team-role">Business Development Manager</p>
+          <p class="team-bio">Kaci connects Suyos del Inca with travelers from around the world, ensuring every guest finds the perfect adventure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="cta">
     <div class="container">
       <h2>Ready to explore with us?</h2>
-      <p>Join one of our tours and experience the magic of the Andes firsthand.</p>
+      <p>
+        Join one of our tours and experience the magic of the Andes firsthand.
+        Small groups, real experiences, memories that last a lifetime.
+      </p>
       <a href="/tours" class="button">See Our Tours</a>
     </div>
   </section>
 
-  <style>
-    .about-hero {
-      background: linear-gradient(180deg, #0b1b2b, #193a59);
-      color: white;
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-
-    .intro {
-      font-size: 1.25rem;
-      max-width: 700px;
-      margin: 1rem auto 0;
-      line-height: 1.6;
-    }
-
-    section {
-      padding: 4rem 1rem;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-    }
-
-    p {
-      line-height: 1.7;
-      font-size: 1.05rem;
-      color: #FFFFFF;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-      text-align: center;
-    }
-
-    .team-member img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .cta {
-      background: #f5f7fa;
-      text-align: center;
-    }
-
-    .cta .button {
-      display: inline-block;
-      background-color: #c9a14a;
-      color: white;
-      padding: 0.8rem 1.6rem;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 1rem;
-      font-weight: 600;
-    }
-
-    .cta .button:hover {
-      background-color: #b18f3f;
-    }
-  </style>
 </Layout>
+
+<style>
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+.about-hero {
+  background: linear-gradient(160deg, #0b1b2b 0%, #193a59 100%);
+  color: white;
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.about-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.2rem;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #c8dcea;
+}
+
+/* ── Shared ───────────────────────────────────────────────────────────────── */
+section {
+  padding: 5rem 1rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  color: #0b1b2b;
+}
+
+p {
+  line-height: 1.75;
+  font-size: 1.05rem;
+  color: #3a3a3a;
+}
+
+/* ── Story + Values ───────────────────────────────────────────────────────── */
+.our-story {
+  background: #ffffff;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.story-text p {
+  margin-bottom: 1rem;
+}
+
+.story-values {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.value-card {
+  background: #f4f8fb;
+  border-left: 4px solid #193a59;
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem;
+}
+
+.value-icon {
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.value-card h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  color: #0b1b2b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.value-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ── Mission Banner ───────────────────────────────────────────────────────── */
+.mission-banner {
+  background: linear-gradient(160deg, #0b1b2b 0%, #193a59 100%);
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.mission-banner blockquote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #ffffff;
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  line-height: 1.7;
+  border: none;
+  padding: 0;
+}
+
+.mission-banner cite {
+  color: #4dd68c;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  font-style: normal;
+}
+
+/* ── Why Quillabamba ──────────────────────────────────────────────────────── */
+.why-quillabamba {
+  background: #f4f8fb;
+  text-align: center;
+}
+
+.why-quillabamba p {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Team ─────────────────────────────────────────────────────────────────── */
+.our-team {
+  background: #ffffff;
+  text-align: center;
+}
+
+.our-team h2 {
+  margin-bottom: 0.5rem;
+}
+
+.team-intro {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  color: #555;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.team-member {
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: #f4f8fb;
+  border: 1px solid #e0eaf2;
+}
+
+/* Placeholder shown until real photos are added.
+   To swap in a real photo, replace the entire .team-photo-placeholder div with:
+   <img src="/images/name.jpg" alt="Name" class="team-photo" /> */
+.team-photo-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #193a59, #247047);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.05em;
+}
+
+/* Uncomment this once you add real photos:
+.team-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  display: block;
+} */
+
+.team-member h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.15rem;
+  color: #0b1b2b;
+}
+
+.team-role {
+  font-size: 0.88rem;
+  color: #247047;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem;
+}
+
+.team-bio {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── CTA ──────────────────────────────────────────────────────────────────── */
+.cta {
+  background: linear-gradient(160deg, #0b1b2b 0%, #193a59 100%);
+  text-align: center;
+  color: white;
+}
+
+.cta h2 {
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.cta p {
+  color: #c8dcea;
+  max-width: 560px;
+  margin: 0 auto 1.5rem;
+}
+
+.cta .button {
+  display: inline-block;
+  background-color: #c9a14a;
+  color: white;
+  padding: 0.85rem 2rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.cta .button:hover {
+  background-color: #b18f3f;
+}
+</style>
