@@ -92,7 +92,7 @@ export const tours = [
     title: "Yanay Mandor Waterfall & White Water Rafting",
     summary:
       "A perfect combination of hiking, waterfalls, coffee, and an exciting white-water rafting experience.",
-    image: "/images/tours/yanay/hero.jpg",
+    image: "/images/tours/mandor/raftinghero.jpg",
 
     duration: "1 day",
     difficulty: "moderate",
@@ -101,9 +101,9 @@ export const tours = [
     meals: { breakfast: 0, lunch: 1, dinner: 0 },
 
     gallery: [
-      "/images/tours/yanay/1.jpg",
-      "/images/tours/yanay/2.jpg",
-      "/images/tours/yanay/3.jpg"
+      "/images/tours/mandor/rafting1.jpg",
+      "/images/tours/mandor/mandor.jpg",
+      "/images/tours/mandor/3.jpg"
     ],
 
     itinerary: [
