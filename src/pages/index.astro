@@ -1,7 +1,6 @@
 
 ---
 import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
 
 const explainer = `
@@ -13,7 +12,6 @@ Are you ready for the adventure of a lifetime?
 ---
 
 <Layout title="Suyos Del Inca">
-    <ContextAlert class="mb-8" />
     <h1 class="mb-10">welcome to SUYOS DEL INCA</h1>
     <img src="/images/Machu Picchu.png" alt="Machu Picchu" />
     <Markdown content={explainer} class="mb-10 text-lg" />
