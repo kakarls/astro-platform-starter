@@ -181,9 +181,8 @@ export const tours = [
     itinerary: [
     "Option 1:",
       "4:30 am departure from Cusco to Cachora (4 hours by car)",
-      "Enjoy a local breakfast before beginning your 4 hour trek",
-      "Marvel at one of the deepest valleys in Peru, as you ascend to the cloud forest",
-      "Enjoy locally cooked food and a comfortable night in a lodge",
+      "Enjoy a local breakfast before beginning your 4 hour trek ascending into the cloud forest",
+      "You'll reach the lodge by midday and relax the rest of the afternoon",
       "Day 2 begins with coffee, coca leaves, and a hearty breakfast",
       "Trek for 3.5-4 hours, and after a lunch break, we will continue for another 2.5 hours to our lodge",
       "Take a much needed break at the lodge, and after dinner you will have time to stargaze",
@@ -195,7 +194,10 @@ export const tours = [
       "Early departure from Quillabamba to Yanama (3 hours by car)",
       "Enjoy a local breakfast in Yanama before beginning your 4 hour trek",
       "Your guide and porters will setup camp for you and prepare a lunch at the campsite",
-      "On day 2, you will get an early start and continue hiking 2 hours to Choquequirao"
+      "On day 2, you will get an early start - after a hearty breakfast, you'll continue hiking 2 hours to Choquequirao",
+			"Walk through the ancient ruins and learn about the various sites from your expert guide",
+			"In the afternoon you will descend back towards the campsite for dinner",
+			"Day 3 you'll return to Yanama, and from there you'll travel by bus back to Quillabamba"
       
     ]
   }
