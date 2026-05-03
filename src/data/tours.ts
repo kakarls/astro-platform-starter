@@ -165,8 +165,21 @@ export const tours = [
       "/images/tours/choquequirao/3.jpg"
     ],
 
+  description: [
+    "Deep in the Peruvian Andes, far from the crowds of the classic Inca Trail, lies Choquequirao — an archaeological wonder twice the size of Machu Picchu that fewer than a fraction of visitors ever reach. Accessible only on foot, this four-day trek is one of the most rewarding adventures in all of South America. You'll descend into one of the deepest valleys in Peru, climb through cloud forest draped in mist and birdsong, and arrive at a site so remote that it still feels like a discovery.",
+
+    "Your journey begins before dawn with a 4:30 AM departure from Cusco, winding through the highlands for four hours to the trailhead village of Cachora. After a warm local breakfast, you'll set out on the trail, descending dramatically into the Apurímac Canyon — one of the deepest river gorges on Earth. The landscape shifts from high-altitude scrubland to lush cloud forest as you lose elevation, and the scale of the valley below will stop you in your tracks more than once.",
+
+    "Day two starts with coffee, coca leaves, and a hearty breakfast — the fuel you'll need for today's ascent. You'll trek for three and a half to four hours through increasingly dramatic terrain before breaking for lunch, then push on for another two and a half hours to your lodge. Tonight, after dinner, step outside and stargaze from one of the darkest, clearest skies in the region.",
+
+    "Day three is the day you've been working toward. After breakfast, a two-hour hike brings you to the entrance of Choquequirao, where your guide will lead you through a site that Inca scholars call the Cradle of Gold. Spread across multiple terraced hillsides and still only partially excavated, walking through it feels like stepping into living history. After exploring the ruins, you'll begin your descent back toward the lodge for lunch and a well-earned rest.",
+
+    "The final day follows the trail back down to the valley floor and up to the highlands, completing the circuit. By the time you're back in Cusco, Choquequirao will feel like a secret you've earned the right to keep."
+  ],
+
+
     itinerary: [
-      "Option 1:",
+    "Option 1:",
       "4:30 am departure from Cusco to Cachora (4 hours by car)",
       "Enjoy a local breakfast before beginning your 4 hour trek",
       "Marvel at one of the deepest valleys in Peru, as you ascend to the cloud forest",
